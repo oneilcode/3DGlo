@@ -1,7 +1,5 @@
 'use strict';
 
-import oneFunc from './modules/one';
-import twoFunc from './modules/two';
+import timer from './modules/timer';
 
-oneFunc();
-twoFunc();
+timer('30 december 2022');

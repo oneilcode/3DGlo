@@ -1,4 +1,1 @@
-(() => {
-   "use strict";
-   console.log("one"), console.log("two");
-})();
+(()=>{"use strict";(t=>{const e=document.getElementById("timer-hours"),n=document.getElementById("timer-minutes"),o=document.getElementById("timer-seconds");let s;s=setInterval((()=>{let t=(()=>{let t=(new Date("30 december 2022").getTime()-(new Date).getTime())/1e3;return{hours:Math.floor(t/60/60),minutes:Math.floor(t/60%60),seconds:Math.floor(t%60),timeRemaining:t}})();e.textContent=t.hours,n.textContent=t.minutes,o.textContent=t.seconds,1===e.textContent.length&&(e.textContent=("0"+t.hours).slice(-2)),1===n.textContent.length&&(n.textContent=("0"+t.minutes).slice(-2)),1===o.textContent.length&&(o.textContent=("0"+t.seconds).slice(-2)),t.timeRemaining>0?console.log("тикает"):(clearInterval(s),e.textContent="00",n.textContent="00",o.textContent="00")}),1e3)})()})();
