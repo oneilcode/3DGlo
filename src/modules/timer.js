@@ -23,23 +23,22 @@ const timer = (deadline) => {
       // тут return можно записать так: return (timeRemaining, hours, munites, seconds)
    };
 
+   //добавляем нули перед числом
+   const addZero = (number) => {
+      if (number < 10) {
+         return '0' + number;
+      } else {
+         return number;
+      }
+   };
+
    const updateClock = () => {
       let getTime = getTimeRemaining();
 
-      timerHours.textContent = getTime.hours;
-      timerMinutes.textContent = getTime.minutes;
-      timerSeconds.textContent = getTime.seconds;
+      timerHours.textContent = addZero(getTime.hours);
+      timerMinutes.textContent = addZero(getTime.minutes);
+      timerSeconds.textContent = addZero(getTime.seconds);
 
-      //добавляем нули перед числом
-      if (timerHours.textContent.length === 1) {
-         timerHours.textContent = ('0' + getTime.hours).slice(-2);
-      }
-      if (timerMinutes.textContent.length === 1) {
-         timerMinutes.textContent = ('0' + getTime.minutes).slice(-2);
-      }
-      if (timerSeconds.textContent.length === 1) {
-         timerSeconds.textContent = ('0' + getTime.seconds).slice(-2);
-      }
 
       // if (getTime.timeRemaining > 0) { // рабочий код через setTimeout
       //    setTimeout(updateClock, 1000);
