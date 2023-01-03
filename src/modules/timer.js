@@ -24,13 +24,7 @@ const timer = (deadline) => {
    };
 
    //добавляем нули перед числом
-   const addZero = (number) => {
-      if (number < 10) {
-         return '0' + number;
-      } else {
-         return number;
-      }
-   };
+   const addZero = (number) => (number < 10) ? '0' + number : number;
 
    const updateClock = () => {
       let getTime = getTimeRemaining();
@@ -39,13 +33,12 @@ const timer = (deadline) => {
       timerMinutes.textContent = addZero(getTime.minutes);
       timerSeconds.textContent = addZero(getTime.seconds);
 
-
       // if (getTime.timeRemaining > 0) { // рабочий код через setTimeout
       //    setTimeout(updateClock, 1000);
       // }
 
       if (getTime.timeRemaining > 0) {
-         // console.log('тикает');
+         console.log('тикает');
       } else {
          clearInterval(intervalId);
          timerHours.textContent = '00';

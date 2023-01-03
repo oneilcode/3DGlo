@@ -28,13 +28,14 @@ const modal = () => {
       }
    };
 
-   animate();
+
 
    window.addEventListener('resize', () => {
       if (screen.width < 768) {
          console.log('проверка'); //этот код отрабатывает
          cancelAnimationFrame(idInterval); //а этот код не отрабатывает
       }
+      animate();
    });
 
 };
