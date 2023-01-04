@@ -6,6 +6,7 @@ import modal from './modules/modal';
 import scroll from './modules/scroll';
 import validation from './modules/validation';
 import tabs from './modules/tabs';
+import slider from './modules/slider';
 
 timer('10 january 2023');
 toggleMenu();
@@ -13,3 +14,4 @@ modal();
 scroll();
 validation();
 tabs();
+slider();
