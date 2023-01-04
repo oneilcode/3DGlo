@@ -38,7 +38,7 @@ const timer = (deadline) => {
       // }
 
       if (getTime.timeRemaining > 0) {
-         console.log('тикает');
+         // console.log('тикает');
       } else {
          clearInterval(intervalId);
          timerHours.textContent = '00';

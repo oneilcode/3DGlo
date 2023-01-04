@@ -2,7 +2,6 @@ const modal = () => {
 
    const buttons = document.querySelectorAll('.popup-btn');
    const modal = document.querySelector('.popup');
-   const closeBtn = modal.querySelector('.popup-close');
    const popuContent = document.querySelector('.popup-content');
 
    buttons.forEach(button => {
@@ -11,8 +10,10 @@ const modal = () => {
       });
    });
 
-   closeBtn.addEventListener('click', () => {
-      modal.style.display = 'none';
+   modal.addEventListener('click', (e) => {
+      if (!e.target.closest('.popup-content') || e.target.classList.contains('popup-close')) {
+         modal.style.display = 'none';
+      }
    });
 
    //анимация модального окна :DDD
@@ -27,8 +28,6 @@ const modal = () => {
          popuContent.style.left = count + 'px';
       }
    };
-
-
 
    window.addEventListener('resize', () => {
       if (screen.width < 768) {
