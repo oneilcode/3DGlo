@@ -1,12 +1,23 @@
 const slider = () => {
    const sliderBlock = document.querySelector('.portfolio-content');
    const slides = document.querySelectorAll('.portfolio-item');
-   const dots = document.querySelectorAll('.dot');
+   let dots = document.querySelectorAll('.dot');
+   const dotsList = document.querySelector('.portfolio-dots');
 
    const timeInterval = 2000;
 
    let currentSlide = 0;
    let interval;
+
+   //добавляем dots к слайдеру в зависимости от количества слайдов
+   slides.forEach(() => {
+      const dot = document.createElement('li');
+      dot.classList.add('dot');
+      dotsList.append(dot);
+   });
+
+   dots = document.querySelectorAll('.dot');
+
 
    const prevSlide = (elems, index, strClass) => {
       elems[index].classList.remove(strClass);
@@ -15,6 +26,8 @@ const slider = () => {
    const nextSlide = (elems, index, strClass) => {
       elems[index].classList.add(strClass);
    };
+
+
 
    const autoSlide = () => {
       prevSlide(slides, currentSlide, 'portfolio-item-active');
