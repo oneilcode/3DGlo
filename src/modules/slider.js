@@ -14,9 +14,11 @@ const slider = () => {
       const dot = document.createElement('li');
       dot.classList.add('dot');
       dotsList.append(dot);
+
    });
 
    dots = document.querySelectorAll('.dot');
+   dots[0].classList.add('dot-active'); //поправила первый дот
 
 
    const prevSlide = (elems, index, strClass) => {
