@@ -36,7 +36,7 @@ const validation = () => {
 
    inputTel.forEach(tel => {
       tel.addEventListener('input', () => {
-         tel.value = tel.value.replace(/[^0-9\-()]/g, ''); //ввод в инпуты только чисел, () и -
+         tel.value = tel.value.replace(/[^0-9\-()+]/g, ''); //ввод в инпуты только чисел, () и - +
       });
    });
 
