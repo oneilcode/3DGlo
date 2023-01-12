@@ -7,7 +7,7 @@ const sendForm = ({
    const statusBlock = document.createElement('div');
    const loadText = 'Загрузка...';
    const errorText = 'Ошибка...';
-   const successText = 'Спасибо, с ваши свяжутся скоро!';
+   const successText = 'Спасибо, с вами свяжутся скоро!';
 
    const name = form.querySelectorAll('input[name=user_name]');
    const phone = form.querySelectorAll('input[name=user_phone]');
@@ -30,6 +30,7 @@ const sendForm = ({
             alert('Номер телефона не должен содержать данные символы');
             statusBlock.textContent = errorText;
          } else if (input.value.length < 11) {
+            success = false;
             alert('Номер телефона должен содержать не менее 11 цифр!');
             statusBlock.textContent = errorText;
          }
@@ -83,6 +84,9 @@ const sendForm = ({
          sendData(formBody)
             .then(data => {
                statusBlock.textContent = successText;
+               setTimeout(() => {
+                  statusBlock.textContent = '';
+               }, 3000);
 
                formElements.forEach(input => {
                   input.value = ''; //очищаем форму после отправки
